@@ -31,48 +31,48 @@ $(document).on("click","#btnSave", function(event) {
 //to identify the update button we didn't use an id we used a class
 $(document).on("click", ".btnUpdate", function(event) 
 { 
-    $("#hidItemIDSave").val($(this).closest("tr").find('#hidItemIDUpdate').val()); 
-    $("#itemCode").val($(this).closest("tr").find('td:eq(0)').text()); 
-    $("#itemName").val($(this).closest("tr").find('td:eq(1)').text()); 
-    $("#itemPrice").val($(this).closest("tr").find('td:eq(2)').text()); 
-    $("#itemDesc").val($(this).closest("tr").find('td:eq(3)').text()); 
+    $("#hidcompIDSave").val($(this).closest("tr").find('#hidcompIDUpdate').val()); 
+    $("#id").val($(this).closest("tr").find('td:eq(0)').text()); 
+    $("#area").val($(this).closest("tr").find('td:eq(1)').text()); 
+    $("#gridName").val($(this).closest("tr").find('td:eq(2)').text()); 
+    $("#compType").val($(this).closest("tr").find('td:eq(3)').text()); 
+    $("#complaint").val($(this).closest("tr").find('td:eq(4)').text()); 
 }); 
 
 
 // CLIENT-MODEL================================================================ 
 function validateItemForm() { 
     // CODE 
-    if ($("#itemCode").val().trim() == "") 
+    if ($("#id").val().trim() == "") 
     { 
-        return "Insert Item Code."; 
+        return "Insert ID."; 
     } 
     
     // NAME 
-    if ($("#itemName").val().trim() == "") 
+    if ($("#area").val().trim() == "") 
     { 
-        return "Insert Item Name."; 
+        return "Insert area Name."; 
     } 
     
     // PRICE------------------------------- 
-    if ($("#itemPrice").val().trim() == "") 
+    if ($("#gridName").val().trim() == "") 
     { 
-        return "Insert Item Price."; 
+        return "Insert Grid Name."; 
     } 
     
     // is numerical value 
-    var tmpPrice = $("#itemPrice").val().trim(); 
-    if (!$.isNumeric(tmpPrice)) 
+    var tmid = $("#id").val().trim(); 
+    if (!$.isNumeric(tmid)) 
     { 
-        return "Insert a numerical value for Item Price."; 
+        return "Insert a numerical value for ID."; 
     } 
     
-    // convert to decimal price 
-    $("#itemPrice").val(parseFloat(tmpPrice).toFixed(2)); 
+   
     
     // DESCRIPTION------------------------ 
-    if ($("#itemDesc").val().trim() == "") 
+    if ($("#compType").val().trim() == "") 
     { 
-        return "Insert Item Description."; 
+        return "Insert Complaint Type."; 
     } 
     
     return true; 

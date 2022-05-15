@@ -18,7 +18,7 @@ import java.util.Scanner;
 @WebServlet("/MaintenanceAPI")
 public class MaintenanceAPI extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	Item itemObj = new Item();
+	Maintenance maintainObj = new Maintenance();
 
 	//convert request parameters to a map
 	private static Map getParasMap(HttpServletRequest request) {
@@ -99,7 +99,7 @@ public class MaintenanceAPI extends HttpServlet {
 		Map paras = getParasMap(request);
 
 		//getting values from the map and sending to delete function
-		String output = MaintainObj.deleteItem(	paras.get("itemID").toString());
+		String output = MaintainObj.deleteItem(	paras.get("compID").toString());
 		
 		//sending the output to client
 		response.getWriter().write(output);

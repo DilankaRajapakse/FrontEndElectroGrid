@@ -156,7 +156,7 @@ public class Maintenance {
         	Output += "</table>";
         	
     	} catch(Exception e) {
-    		Output = "Failed to read the items";
+    		Output = "Failed to read the Maintenance";
     		System.err.println(e.getMessage());
     	}
     	
